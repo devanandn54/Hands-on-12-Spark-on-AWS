@@ -145,3 +145,63 @@ To avoid any future charges (especially if you're on the Free Tier), be sure to 
 2.  Delete the `start_glue_job_trigger` Lambda function.
 3.  Delete the `process_reviews_job` Glue job.
 4.  Delete the `AWSGlueServiceRole-Reviews` IAM role.
+
+
+
+## Implementation Screenshots
+
+### 1. S3 Bucket Setup
+![S3 Buckets Overview](screenshots/01_s3_buckets.png)
+*Both landing and processed buckets created*
+
+![CSV File Upload](screenshots/02_csv_uploaded.png)
+*Product reviews CSV uploaded to landing bucket*
+
+### 2. IAM Configuration
+![Glue IAM Role](screenshots/03_iam_role.png)
+*IAM role with required policies*
+
+### 3. AWS Glue Job Configuration
+![Glue Job Details](screenshots/04_glue_job_details.png)
+*Job configuration with correct IAM role*
+
+![Glue Script](screenshots/05_glue_script.png)
+*ETL script with S3 paths*
+
+### 4. Lambda Function (Event Trigger)
+![Lambda Function](screenshots/06_lambda_function.png)
+*Lambda function to trigger Glue job*
+
+![S3 Trigger](screenshots/07_s3_trigger.png)
+*S3 event notification configured*
+
+### 5. Job Execution
+![Job Running](screenshots/08_job_running.png)
+*Glue job execution in progress*
+
+![Job Success](screenshots/09_job_success.png)
+*Job completed successfully*
+
+![CloudWatch Logs](screenshots/10_cloudwatch_logs.png)
+*Detailed execution logs*
+
+### 6. Output Results
+![Output Folder Structure](screenshots/11_output_folders.png)
+*Organized output folders in S3*
+
+![Processed Data](screenshots/12_processed_data.png)
+*Cleaned and transformed data*
+
+### 7. Analytics Query Results
+
+#### Query 1: Average Rating per Product
+![Query 1 Results](screenshots/13_query1_results.png)
+
+#### Query 2: Date-wise Review Count
+![Query 2 Results](screenshots/14_query2_results.png)
+
+#### Query 3: Top 5 Active Customers
+![Query 3 Results](screenshots/15_query3_results.png)
+
+#### Query 4: Rating Distribution
+![Query 4 Results](screenshots/16_query4_results.png)
